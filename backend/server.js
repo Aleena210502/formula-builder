@@ -9,7 +9,11 @@ const formulasRoutes = require('./routes/formulas');
 
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ["https://formula-builder-nine.vercel.app"],
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true
+}));
 app.use(express.json());
 
 

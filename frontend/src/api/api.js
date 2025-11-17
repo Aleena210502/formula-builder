@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+const API_BASE = process.env.REACT_APP_API_URL || "https://formula-builder-hvmw.onrender.com/api";
 
 export const getVariables = () =>
   axios.get(`${API_BASE}/variables`).then((r) => r.data);
@@ -20,7 +20,7 @@ export const getFormulas = () =>
 export const createFormula = (data) =>
   axios.post(`${API_BASE}/formulas`, data).then((r) => r.data);
 
-export const deleteFormula = (id) =>
+export const deleteFormula = (id) =>                                                                                  
   axios.delete(`${API_BASE}/formulas/${id}`).then((r) => r.data);
 
 export const executeFormula = (id, runtime) =>
